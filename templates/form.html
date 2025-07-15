@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% block title %} Formulário {% endblock %}
+
+{% block background %}background{% endblock %}
+
+{% block content %}
+
+    <form method="post" class="container" action="/form/enviar-mensagem">
+        {{ form.hidden_tag() }}
+
+        <!-- Nome -->
+        <div class="text-white">
+            {{ form.nome.label(class='form-label mt-5') }}
+            {{ form.nome(class='form-control bg-dark', required=false) }}
+            {% for erro in form.nome.errors %}
+                {% if erro %}
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+                        {{ erro }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- E-mail -->
+        <div class="text-white">
+            {{ form.email.label(class='form-label mt-5') }}
+            {{ form.email(class='form-control bg-dark', required=false) }}
+            {% for erro in form.email.errors %}
+                {% if erro %}
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+                        {{ erro }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <!-- Mensagem -->
+        <div class="input-group mt-5">
+            {{ form.nota.label(class='input-group-text bg-dark text-white') }}
+            {{ form.nota(class='form-control bg-dark text-white', rows=5, required=false) }}
+        </div>
+            {% for erro in form.nota.errors %}
+                {% if erro %}
+                    <div class="alert alert-danger alert-dismissible fade show mt-2">
+                        {{ erro }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            {% with msgs = get_flashed_messages() %}
+                {% if msgs %}
+                    {% for msg in msgs %}
+                        <div class="alert alert-success alert-dismissible fade show mt-4 mb-4">
+                            {{ msg }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+        {{ form.enviar(class='btn btn-primary mt-4 mb-4')}}
+       
+        
+        
+    </form>
+
+    
+
+{% endblock %}

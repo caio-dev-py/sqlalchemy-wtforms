@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %} Home {% endblock %} 
+
+<!-- atributos extras -->
+{% block mt %} mt-5 {% endblock %}
+{% block background %}background{% endblock %}
+
+<!-- conteúdo -->
+{% block content %}
+
+    <div class="container mt-5 text-white">
+        <div class="h3">Bem-vindo à página inicial</div>
+        <div class="p">Aqui pode ver bastante coisa (Ou nada)</div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="card bg-dark text-white">
+            <img class="card-img" src="{{ url_for('static', filename='imgs/imagem1.jpg')}}" alt="Title"/>
+            <div class="card-img-overlay mt-5">
+                <h4 class="card-title mt-5">Caio Araujo</h4>
+                <p class="card-text">Dev. FullStack</p>
+            </div>
+        </div>
+        
+    </div>
+
+{% endblock %}

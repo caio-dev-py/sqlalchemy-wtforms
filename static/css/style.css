@@ -1,0 +1,12 @@
+body {
+    height: 100vh;
+}
+
+#background {
+    background-image: url('../imgs/background-img.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    backdrop-filter: blur(5rem);
+}
