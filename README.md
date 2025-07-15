@@ -77,4 +77,4 @@ Bootstrap pode ser incluído via CDN nos arquivos HTML da pasta templates.
 📄 Licença
 Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-Desenvolvido por Caio Araujo 🚀 
+Desenvolvido por Caio Araujo 🚀
